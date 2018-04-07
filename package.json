@@ -1,0 +1,12 @@
+{
+  "engines": [
+    "node >= 8.9.4",
+    "npm >= 5.6.0"
+  ],
+  "scripts": {
+    "docs:compile": "find $PWD/docs/*.apib -maxdepth 0 -type f | xargs -P $(getconf _NPROCESSORS_ONLN) -I % bash -c 'aglio -i % -o %.html --theme-variables slate'",
+    "docs:preview": "aglio --theme-variables slate --server -p 4321 -i"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
